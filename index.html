@@ -1,23 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>راكان - وظائف</title>
-</head>
-<body>
-    <h1>راكان - وظائف</h1>
-    <p>مرحبًا بكم في صفحة الوظائف الخاصة بنا!</p>
-    <p>نحن نبحث عن أشخاص موهوبين للانضمام إلى فريقنا.</p>
-    <h2>الوظائف المتاحة</h2>
-    <ul>
-        <li>مطور ويب</li>
-        <li>مصمم جرافيك</li>
-        <li>مدير مشروع</li>
-    </ul>
-    <url>
-       <a href="https://wa.me/+966582444200">تقديم طلب</a>
-    </url>
-    
-</body>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وظيفتك أولاً</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#4F46E5',        // Indigo 600
+              secondary: '#14B8A6',      // Teal 500
+              accent1: '#34D399',        // Emerald 400
+              accent2: '#F472B6'         // Rose 400
+            },
+            animation: {
+              'spin-slow': 'spin 30s linear infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Google Font: Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Tajawal", sans-serif;
+        scroll-behavior: smooth;
+      }
+      /* Glassmorphism cards */
+      .glass {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px) saturate(150%);
+        -webkit-backdrop-filter: blur(10px) saturate(150%);
+      }
+      /* Smooth transitions */
+      * {
+        transition: color 0.3s ease, background-color 0.3s ease,
+                    transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-slate-50 to-slate-100 text-gray-700">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 right-0 left-0 bg-white/70 backdrop-blur shadow z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-l from-primary to-secondary">وظيفتك أولاً</a>
+        <nav>
+          <ul class="hidden md:flex space-x-8 text-lg">
+            <li><a href="#how" class="hover:text-primary">طريقة العمل</a></li>
+            <li><a href="#benefits" class="hover:text-primary">ماذا ستحصل عليه؟</a></li>
+            <li><a href="#sectors" class="hover:text-primary">القطاعات</a></li>
+            <li><a href="#pricing" class="hover:text-primary">الاشتراك</a></li>
+            <li><a href="#about" class="hover:text-primary">من أنا</a></li>
+            <li><a href="#contact" class="hover:text-primary">تواصل</a></li>
+          </ul>
+        </nav>
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 bg-white/90 backdrop-blur-sm">
+        <ul class="space-y-3 text-lg">
+          <li><a href="#how" class="block">طريقة العمل</a></li>
+          <li><a href="#benefits" class="block">ماذا ستحصل عليه؟</a></li>
+          <li><a href="#sectors" class="block">القطاعات</a></li>
+          <li><a href="#pricing" class="block">الاشتراك</a></li>
+          <li><a href="#about" class="block">من أنا</a></li>
+          <li><a href="#contact" class="block">تواصل</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-36 pb-28 overflow-hidden">
+      <!-- Animated shapes -->
+      <div class="absolute -top-10 -left-10 w-72 h-72 bg-gradient-to-br from-primary to-secondary rounded-full filter blur-2xl opacity-30 animate-pulse"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-primary to-secondary rounded-full filter blur-3xl opacity-20 animate-spin-slow"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-6">
+          وظيفتك توصل لك قبل الكل – وفر وقتك وخلك أول من يقدّم!
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed mb-10 text-gray-800">
+          خدمة ذكية ترسل لك أحدث الوظائف يوميًا من كل القطاعات. توصلك الوظائف أول بأول في ملف مرتب – جاهز للتقديم.
+        </p>
+        <a href="#pricing" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-10 rounded-full shadow-md transform hover:scale-105">
+          اشترك الآن
+        </a>
+      </div>
+    </section>
+
+    <!-- طريقة العمل -->
+    <section id="how" class="py-24 bg-gradient-to-b from-slate-100 to-slate-50" data-aos="fade-up">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-l from-primary to-secondary">
+          وشلون تضمن تكون من أوائل المتقدمين؟
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow" data-aos="zoom-in" data-aos-delay="100">
+            الوظائف تُغلق بسرعة، والتقديم المبكر يرفع فرص القبول.
+          </div>
+          <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow" data-aos="zoom-in" data-aos-delay="200">
+            طورنا برنامج يبحث يوميًا عن الوظائف الجديدة فقط من مواقع التوظيف الرسمية.
+          </div>
+          <div class="glass p-6 rounded-2xl shadow-md hover:shadow-xl transition-shadow" data-aos="zoom-in" data-aos-delay="300">
+            يجمعها ويرتبها ويرسلها لك مباشرة، بدون ما تضيع وقتك بالبحث.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ماذا ستحصل عليه؟ -->
+    <section id="benefits" class="py-24" data-aos="fade-up">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-l from-secondary to-accent1">
+          ملف يومي، مليان فرص حقيقية
+        </h2>
+        <p class="text-lg md:text-xl mb-10">
+          كل يوم (ماعدا الإجازات) توصلك قائمة جاهزة فيها:
+        </p>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="glass p-6 rounded-2xl shadow-md" data-aos="flip-left">اسم الجهة</div>
+          <div class="glass p-6 rounded-2xl shadow-md" data-aos="flip-left" data-aos-delay="100">المدينة / الموقع</div>
+          <div class="glass p-6 rounded-2xl shadow-md" data-aos="flip-left" data-aos-delay="200">الراتب</div>
+          <div class="glass p-6 rounded-2xl shadow-md" data-aos="flip-left" data-aos-delay="300">تفاصيل الوظيفة</div>
+          <div class="glass p-6 rounded-2xl shadow-md" data-aos="flip-left" data-aos-delay="400">طريقة التقديم المباشر</div>
+        </div>
+        <p class="text-lg md:text-xl mt-10">
+          تفتح الملف، تختار، وتقدم فورًا.
+        </p>
+      </div>
+    </section>
+
+    <!-- القطاعات -->
+    <section id="sectors" class="py-24 bg-gradient-to-b from-slate-100 to-slate-50" data-aos="fade-up">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-l from-primary to-secondary">
+          القطاعات والمجالات المغطاة
+        </h2>
+        <ul class="space-y-4 text-lg md:text-xl leading-relaxed">
+          <li>وظائف حكومية</li>
+          <li>وظائف شبه حكومية</li>
+          <li>وظائف في القطاع الخاص</li>
+          <li>مختلف التخصصات والمجالات</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- الاشتراك -->
+    <section id="pricing" class="relative py-28 overflow-hidden" data-aos="fade-up">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-80 -z-10"></div>
+      <div class="max-w-5xl mx-auto px-6 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">
+          اشترك معنا – خلك أول المتقدمين
+        </h2>
+        <div class="glass rounded-3xl shadow-xl p-12 inline-block max-w-md w-full" data-aos="zoom-in">
+          <p class="text-5xl font-extrabold mb-6">
+            <span>99</span> <span class="text-2xl font-bold">ريال</span> <span class="text-xl">/ شهريًا</span>
+          </p>
+          <ul class="text-lg space-y-2 mb-10 text-slate-100">
+            <li>التقديم سهل جدا بضغطة زر فقط</li>
+            <li>تنبيه عبر واتساب والتيليقرام</li>
+            <li>وظائف يومية توصلك قبل الناس</li>
+            <li>سعر رمزي مقابل اشتراك شهر</li>
+            <li>ملف منظم سهل التصفح والبحث</li>
+          </ul>
+          <a href="https://wa.me/966502555462" target="#" class="inline-block bg-accent1 hover:bg-accent2 text-white font-bold py-3 px-10 rounded-full shadow-md transform hover:scale-105">
+            اشترك عبر واتساب
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- من أنا -->
+    <section id="about" class="py-24" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-l from-secondary to-accent1">
+          راكان – مبرمج سعودي
+        </h2>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-800">
+          تجربتي في التقديم السريع فتحت لي أبواب كثيرة، وقررت أقدم هالخدمة عشان تساعد غيري.<br />
+          هدفي: تسهيل الوصول للوظائف، ورفع فرص القبول للجميع.
+        </p>
+      </div>
+    </section>
+
+    <!-- تواصل -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-slate-100 to-slate-50" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-l from-primary to-secondary">
+          تواصل معنا
+        </h2>
+        <p class="text-lg mb-8">
+          رقم الجوال: <a href="tel:+966502555462" class="text-primary font-semibold">0502555462</a>
+        </p>
+        <a href="https://wa.me/966502555462" target="#" class="inline-flex items-center gap-3 bg-secondary hover:bg-accent1 text-white py-3 px-8 rounded-full shadow-md transition-transform transform hover:scale-105">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.52 3.484A11.824 11.824 0 0 0 12.007 0C5.379 0 0 5.378 0 12.007c0 2.118.555 4.127 1.615 5.937L0 24l6.19-1.61a11.94 11.94 0 0 0 5.818 1.475h.005c6.627 0 12.007-5.378 12.007-12.006 0-3.212-1.25-6.227-3.51-8.382zm-8.517 18.066h-.004a9.954 9.954 0 0 1-5.084-1.389l-.364-.217-3.677.956.982-3.585-.238-.369a9.94 9.94 0 0 1-1.544-5.306c.001-5.497 4.476-9.972 9.974-9.972A9.88 9.88 0 0 1 22.002 12c0 5.497-4.476 9.972-9.972 9.972z"/>
+            <path d="M17.406 14.339c-.297-.149-1.758-.868-2.031-.967-.273-.099-.472-.148-.672.149-.199.297-.773.967-.947 1.166-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.476-.883-.79-1.48-1.765-1.653-2.062-.173-.297-.018-.458.13-.607.134-.133.298-.347.447-.521.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.672-1.615-.92-2.211-.242-.578-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.793.372-.273.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.196 5.076 4.482.711.307 1.262.492 1.694.63.712.227 1.36.195 1.871.118.571-.085 1.758-.718 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.123-.272-.198-.57-.347z"/>
+          </svg>
+          تواصل عبر واتساب
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-100 text-center py-6">
+      <p>© <span id="year"></span> جميع الحقوق محفوظة – وظيفتك أولاً</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Init AOS
+      AOS.init({ duration: 800, once: true });
+
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Dynamic year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
